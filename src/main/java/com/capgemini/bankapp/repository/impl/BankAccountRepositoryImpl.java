@@ -1,13 +1,25 @@
 package com.capgemini.bankapp.repository.impl;
 
 import java.util.HashSet;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.capgemini.bankapp.entities.BankAccount;
 import com.capgemini.bankapp.repository.BankAccountRepository;
-
+@Repository
 public class BankAccountRepositoryImpl implements BankAccountRepository {
 	
 	private HashSet<BankAccount> bankAccounts;
+	public void customInit() {
+		System.out.println("Repo INIT");
+	}
+	
+	public void customDestroy() {
+		System.out.println("Repo Destroy");
+	}
 
 	public BankAccountRepositoryImpl() {
 		super();
@@ -37,4 +49,36 @@ public class BankAccountRepositoryImpl implements BankAccountRepository {
 		return false;
 	}
 
+	@Override
+	public boolean addBankAccount(BankAccount account) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public BankAccount findBankAccountById(long accountId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BankAccount> finAllBankAccounts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankAccount upadteBankAccount(BankAccount account) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteBankAccount(long account) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	
 }
